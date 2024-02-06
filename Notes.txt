@@ -1,0 +1,35 @@
+"When you need to pass data from a parent component to a child component in React,
+ one approach is to utilize the useContext hook. This is particularly useful 
+ when employing a context provider to manage shared state or data across components."
+
+It is alternative of context api.
+React Context is a way to manage state globally.
+It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+
+ Steps:
+ 1. Creating Context:First, you need to create a context using the createContext function.
+    This function returns a context object with a Provider and a Consumer
+    const MyContext = createContext('default value');
+
+ 2.Providing Context:
+ Use the Provider component to wrap the part of the component tree where you want to make the context available.
+    const ParentComponent = () => {
+        return (
+            <MyContext.Provider value="value from parent">
+                <ChildComponent />
+            </MyContext.Provider>
+            );
+        };
+
+3. Consuming Context:
+In the child component, use the useContext hook to access the value provided by the nearest MyContext.Provider ancestor.
+
+const ChildComponent = () => {
+  const contextValue = useContext(MyContext);
+  return <p>Context value: {contextValue}</p>;
+};
+
+The useContext hook takes the context object created by createContext as an argument and returns the current context value.
+
+By using useContext, you can avoid prop drilling (passing data through multiple levels of components) and
+make it easier to manage shared state or configuration settings within your React application.
