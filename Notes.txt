@@ -1,0 +1,39 @@
+The useEffect hook in React allows functional components to perform side effects.
+Side effects are operations that occur outside the scope of the component's render cycle,
+such as data fetching, subscriptions, or manually changing the DOM.
+
+Basic Syntax:
+useEffect(() => {
+  // Side effect code goes here
+}, [dependencies]);
+or
+useEffect(<function>, <dependency>)
+The first argument is a function that contains the side effect code.
+The second argument is an optional array of dependencies. If provided, the effect will re-run only if the values in the dependencies array change.
+
+
+1 - Side Effect Function:-
+The function inside useEffect contains the side effect code. In this example,
+it sets up an interval to update the seconds state every second.
+
+2 - Dependencies Array:
+If provided, the dependencies array determines when the effect will run.
+If any of the values in the dependencies array change between renders,
+the effect will re-run. If the dependencies array is empty, the effect will only run once after the initial render.
+
+3 - Cleanup Function:
+If the effect returns a function, React will execute it when the component unmounts or before running the next effect. 
+This is useful for cleanup tasks such as unsubscribing from subscriptions or clearing timers.
+
+4 - Unsubscribe and Clear Intervals:
+In this example, the cleanup function returned by useEffect clears the interval to prevent memory leaks
+when the component unmounts or the dependencies change.
+
+
+Common Use Cases:
+Data Fetching: Use useEffect to fetch data from an API when the component mounts.
+Event Listeners: Set up event listeners inside useEffect and remove them in the cleanup function.
+Subscription Management: Subscribe to external data sources and clean up subscriptions when the component unmounts.
+
+In summary, useEffect is a versatile React hook that allows you to perform side effects in functional components. 
+It helps manage asynchronous tasks, subscriptions, and other operations that occur outside the scope of the component's render cycle.
