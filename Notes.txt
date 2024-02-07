@@ -1,0 +1,28 @@
+The useState is a React hook that allows functional components to manage state. 
+It provides a way to declare state variables in functional components,
+enabling them to hold and update state over the lifecycle of the component.
+
+Syntax:
+const [state, setState] = useState(initialState);
+
+Explanation:
+1 - Initialization:
+The useState function is called with an initial state value (in this example, 0), and it returns an array with two elements.
+
+2 - State Variable and Update Function:
+The first element of the array (count in this case) is the current state value.
+The second element (setCount in this case) is a function that allows you to update the state.
+
+3 - Rendering:
+The current state value (count) can be used in the component's rendering logic.
+
+4 - Updating State:
+To update the state, you call the update function (setCount) with the new value.
+React then re-renders the component with the updated state.
+
+
+Rules for Hook
+1 - Must be written inside function compoenent.
+2 - Must be import in compoent.
+3 - Must be call at top level of compoenent.
+4 - cannot be conditional.
