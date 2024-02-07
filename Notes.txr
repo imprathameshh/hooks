@@ -1,0 +1,27 @@
+
+A custom hook in React is a JavaScript function that utilizes one or more of the existing 
+React hooks (such as useState, useEffect, useContext, etc.) to encapsulate and reuse logic 
+across multiple components. Custom hooks allow you to extract complex logic from components,
+ making them more reusable, readable, and maintainable.
+
+Here are some key points about custom hooks:
+
+1 - Reusable Logic: Custom hooks allow you to encapsulate reusable logic that can be shared across
+different components in your application. This can include fetching data from APIs, managing complex state,
+handling side effects, and more.
+
+2 - Composition: Custom hooks can call other hooks. This means you can compose custom hooks from existing
+hooks provided by React or other custom hooks you've created, enabling you to build sophisticated logic
+by combining smaller pieces together.
+
+3 - Convention: Custom hooks are prefixed with "use" to indicate that they are hooks and can be used within
+functional components just like built-in React hooks.
+
+4 - Naming: When creating custom hooks, it's essential to choose descriptive and intuitive names that convey
+their purpose and functionality clearly. This helps improve code readability and maintainability.
+
+5 - State Isolation: Each component that uses a custom hook has its own isolated state. Custom hooks don't
+share state between components; instead, they provide a way to reuse logic across components while maintaining separate instances of state.
+
+6 - Hook Composition: Custom hooks can also return other values, not just state and effects. They can return any value that
+might be useful for components, such as functions, data, or configuration objects.
